@@ -1,4 +1,3 @@
-
 const items = document.querySelectorAll(".bEliminar");
 items.forEach(item => {
     item.addEventListener("click", function(){
@@ -9,10 +8,32 @@ items.forEach(item => {
         const confirm = window.confirm("Deseas eliminar el elemento?");
 
         if(confirm){
-            httpRequest("http://localhost/MVC-02/"+controlador+"/"+accion+"/" + id, function(e){
+            httpRequest("http://localhost/leteme/"+controlador+"/"+accion+"/" + id, function(e){
                 console.log(this.responseText);
-                const tbody = document.querySelector("#tbody-alumnos");
+                const tbody = document.querySelector("#tbody-data");
                 const fila  = document.querySelector("#fila-" + id);
+              
+                tbody.removeChild(fila);
+            })
+        }
+    });
+});
+const items1 = document.querySelectorAll(".bEliminar2");
+items1.forEach(item => {
+    item.addEventListener("click", function(){
+        const id = this.dataset.id;
+        const controlador = this.dataset.controlador;
+        const key = this.dataset.key;
+        const accion=this.dataset.accion;
+
+        const confirm = window.confirm("Deseas eliminar el elemento?");
+
+        if(confirm){
+            httpRequest("http://localhost/leteme/"+controlador+"/"+accion+"/" + key, function(e){
+                console.log(this.responseText);
+                const tbody = document.querySelector("#tbody-data");
+                const fila  = document.querySelector("#fila-" + id);
+              
                 tbody.removeChild(fila);
             })
         }
