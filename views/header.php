@@ -14,6 +14,7 @@
     <li><a href="<?php echo constant('URL'); ?>index">Inicio</a></li>
     <li><a href="<?php echo constant('URL'); ?>programa">Programas</a></li>
     <li><a href="<?php echo constant('URL'); ?>tipodoc">Tipo Documento</a></li>
+    <li><a href="<?php echo constant('URL'); ?>index/Logout">Salir</a></li>
     
 </ul>
 
